@@ -1,0 +1,103 @@
+:root {
+  /* --special-color --specialColor --specialcolor --special_color */
+  --special-color: tomato;
+  --second-color: #551CF1;
+}
+
+/* . is class selector */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* space is the descendent selector */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* space is the descendent selector */
+nav ul li {
+  flex: 1;
+}
+
+/* > is the direct child selector */
+main>p {
+  font-size: 1.5rem;
+}
+
+/* + is the adjacent sibling selector */
+h2+p {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+.stars span {
+  cursor: pointer;
+}
+
+/* ~ is the sibling selector */
+.stars span:hover~span {
+  opacity: .5;
+}
+
+/* [] is the attribute selector */
+a[href="#"] {
+  color: var(--second-color);
+}
+
+/* ^ is for start of the value */
+a[href^="http"] {
+  border-left: 4px solid var(--special-color);
+}
+
+/* Pseudo Class Selectors */
+/* LoVe HAte */
+
+nav a,
+nav a:link,
+nav a:visited {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform .5s;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+  transform: scale(1.4);
+}
+
+nav a:active {
+  transform: scale(1.4) translateX(10px);
+}
+
+/* Pseudo Elements */
+
+a[href$=".pdf"]::after {
+  content: "\2913";
+  font-weight: bold;
+  color: var(--special-color);
+}
+
+h2+p::first-line {
+  color: var(--special-color);
+}
+
+h2+p::first-letter {
+  font-size: 3rem;
+}
+
+/* calc() function */
+
+.google {
+  display: block;
+  background-color: lavender;
+  padding: 2rem;
+  margin: 1rem;
+  width: calc(100% - 4px - 6rem);
+}
